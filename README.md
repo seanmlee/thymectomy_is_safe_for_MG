@@ -24,5 +24,11 @@ This repository contains reproducible code for our research manuscript titled "C
 
 ## To use this repository
 
+- Clone the repository and open the `./thymectomy_is_safe_for_MG.Rproj` R Project file
+- This repository uses `renv` dependency management, so all software, package, and dependency version information is listed in the `./renv.lock` file and will automatically configure once prompted
+- All scripts are in the `./scripts` directory
+- You will need to add your own NSQIP database file into the root directory, saved as `nsqip.db`; the only table needed is `puf`; make sure all variable names are lowercase
+- To run the entire analysis, use the script `00_source.R`; this will run each script in order
+- Please send questions to smlee@gwu.edu
 <br>  
 <br> 
