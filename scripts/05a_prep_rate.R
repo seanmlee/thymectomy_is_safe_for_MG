@@ -35,6 +35,14 @@ mg <- read.csv(
   )
 
 
+thymoma <- read.csv(
+  
+  "data/thymoma.csv", 
+  header = TRUE
+  
+  )
+
+
 
 # format -----------------------------------------------------------------------
 # join
@@ -54,11 +62,28 @@ rate_summary <- left_join(
   )
 
 
+rate_summary <- left_join(
+  
+  rate_summary, 
+  thymoma
+  
+  )
+
+
 # replace na
 rate_summary["thy"][is.na(rate_summary["thy"])] <- 0 
 rate_summary["mg"][is.na(rate_summary["mg"])] <- 0 
+rate_summary["thymoma"][is.na(rate_summary["thymoma"])] <- 0 
 
 
+# exclude thymoma
+rate_summary <- rate_summary %>%
+  
+  filter(
+    
+    thymoma != 1
+    
+    )
 
 
 # create mgthy indicator column (which is 1 when mg = 1 and thy = 1) -----------

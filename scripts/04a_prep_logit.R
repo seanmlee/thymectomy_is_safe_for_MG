@@ -28,6 +28,14 @@ mg <- read.csv(
   )
 
 
+thymoma <- read.csv(
+  
+  "data/thymoma.csv", 
+  header = TRUE
+  
+  )
+
+
 # join
 kam <- left_join(
   
@@ -43,10 +51,28 @@ kam <- left_join(
   
   )
 
+kam <- left_join(
+  
+  kam, 
+  thymoma
+  
+  )
+
 
 # replace na
 kam["thy"][is.na(kam["thy"])] <- 0 
 kam["mg"][is.na(kam["mg"])] <- 0 
+kam["thymoma"][is.na(kam["thymoma"])] <- 0 
+
+
+# exclude thymoma
+kam <- kam %>%
+  
+  filter(
+    
+    thymoma != 1
+    
+    )
 
 
 # filter thy == 1

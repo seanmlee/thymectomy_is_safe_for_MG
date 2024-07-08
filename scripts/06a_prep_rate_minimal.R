@@ -38,7 +38,15 @@ mg <- read.csv(
   "data/mg.csv", 
   header = TRUE
   
-)
+  )
+
+
+thymoma <- read.csv(
+  
+  "data/thymoma.csv", 
+  header = TRUE
+  
+  )
 
 
 
@@ -49,7 +57,7 @@ rate_summary_minimal <- left_join(
   puf, 
   thy
   
-)
+  )
 
 
 rate_summary_minimal <- left_join(
@@ -57,13 +65,31 @@ rate_summary_minimal <- left_join(
   rate_summary_minimal, 
   mg
   
-)
+  )
+
+
+rate_summary_minimal <- left_join(
+  
+  rate_summary_minimal, 
+  thymoma
+  
+  )
 
 
 # replace na
 rate_summary_minimal["thy"][is.na(rate_summary_minimal["thy"])] <- 0 
 rate_summary_minimal["mg"][is.na(rate_summary_minimal["mg"])] <- 0 
+rate_summary_minimal["thymoma"][is.na(rate_summary_minimal["thymoma"])] <- 0 
 
+
+# exclude thymoma
+rate_summary_minimal <- rate_summary_minimal %>%
+  
+  filter(
+    
+    thymoma != 1
+    
+    )
 
 
 

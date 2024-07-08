@@ -57,7 +57,7 @@ rate_summary_minimal$period <- factor(
 # fit model --------------------------------------------------------------------
 model <- lm(
   
-  mgthy_rate ~ 
+  mgthy_rate*100 ~ # multiply by 100 to put coefficient estimates on the percentage point scale
     year *
     period +
     mg_total,
@@ -209,7 +209,7 @@ rate_summary_minimal %>%
     data = newdata1, 
     mapping = aes(
       x = year, 
-      y = fit_response1
+      y = fit_response1 / 100
     ),
     color = "#FF5744"
     
@@ -221,9 +221,9 @@ rate_summary_minimal %>%
     mapping = 
       aes(
         x = year,
-        y = fit_response1,
-        ymin = lwr_response1,
-        ymax = upr_response1
+        y = fit_response1 / 100,
+        ymin = lwr_response1 / 100,
+        ymax = upr_response1 / 100
       ),
     alpha = 0.1,
     fill = "#FF5744",
@@ -236,7 +236,7 @@ rate_summary_minimal %>%
     data = newdata2, 
     mapping = aes(
       x = year, 
-      y = fit_response2
+      y = fit_response2 / 100
     ),
     color = "#00BFC4"
     
@@ -248,9 +248,9 @@ rate_summary_minimal %>%
     mapping = 
       aes(
         x = year,
-        y = fit_response2,
-        ymin = lwr_response2,
-        ymax = upr_response2
+        y = fit_response2 / 100,
+        ymin = lwr_response2 / 100,
+        ymax = upr_response2 / 100
       ),
     alpha = 0.1,
     fill = "#00BFC4",

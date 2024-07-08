@@ -257,13 +257,13 @@ mod_narrow <- glm(
   weights = w.out$weights,
   data = kam
   
-)
+  )
 
 summary(
   
   mod_narrow
   
-)
+  )
 
 
 mod_broad <- glm(
@@ -274,13 +274,13 @@ mod_broad <- glm(
   weights = w.out$weights,
   data = kam
   
-)
+  )
 
 summary(
   
   mod_broad
   
-)
+  )
 
 
 
@@ -547,7 +547,7 @@ fit %>%
   
   geom_signif(
     
-    y_position = 0.175, 
+    y_position = 0.170, 
     xmin = 0.875,
     xmax = 1.125,
     annotation = "*", 
