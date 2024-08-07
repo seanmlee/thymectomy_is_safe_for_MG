@@ -82,7 +82,7 @@ love.plot(
   var.order = "unadjusted",
   abs = TRUE,
   line = TRUE, 
-  thresholds = c(m = .1),
+  thresholds = c(m = .25),
   var.names = new.names,
   colors = c("#F8766D", "#00BFC4"),
   stars = "raw",
@@ -96,10 +96,11 @@ love.plot(
     
     legend.box.background = element_rect(), 
     legend.box.margin = margin(1, 1, 1, 1),
-    axis.text = element_text(size = 20),
-    axis.title = element_text(size = 20),
-    legend.title = element_text(size = 20),
-    legend.text = element_text(size = 20),
+    plot.title = element_text(size = 15),
+    axis.text = element_text(size = 15),
+    axis.title = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.text = element_text(size = 15),
     aspect.ratio = 1
     
     )
