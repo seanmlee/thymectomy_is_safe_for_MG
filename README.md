@@ -25,8 +25,8 @@ This repository contains reproducible code for our research manuscript titled "C
 - Clone the repository and open the `./thymectomy_is_safe_for_MG.Rproj` R Project file
 - This repository uses `renv` dependency management; all software, package, and dependency version information is listed in the `./renv.lock` file and will automatically configure once prompted
 - All scripts are in the `./scripts` directory
-- You will need to create a new directory called `./nsqip_raw` and add your own NSQIP text files to it
-  - See `./scripts/00_compile_nsqip.R` to ensure that your raw NSQIP text files are labeled appropriately
+- You will need to create a new directory called `./nsqip_raw` and add your own unaltered NSQIP text files to it
+  - See `./scripts/00_compile_nsqip.R` to ensure that your raw unaltered NSQIP text files are labeled appropriately (in `./scripts/00_compile_nsqip.R`, NSQIP text files are labeled as we received them from the American College of Surgeons)
 - Execute scripts in their numbered order to format NSQIP data, perform all analyses, and generate all figures and tables
 - Please direct questions to smlee@gwu.edu
 <br>  
