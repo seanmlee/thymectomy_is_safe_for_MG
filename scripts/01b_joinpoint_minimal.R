@@ -1,5 +1,11 @@
 
 
+# install {nih.joinpoint} ------------------------------------------------------
+# per https://github.com/DanChaltiel/nih.joinpoint, 
+# "As for now, you can only install the development version of this package from GitHub:"
+devtools::install_github("DanChaltiel/nih.joinpoint")
+
+
 # load libraries ---------------------------------------------------------------
 library(tidyverse)
 library(nih.joinpoint)
